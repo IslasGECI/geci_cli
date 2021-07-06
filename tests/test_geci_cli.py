@@ -1,9 +1,9 @@
-import dummy_transformations as dt
+from geci_cli import geci_cli
+from unittest import mock
 
+import argparse
 
-def test_add_offset():
-    augend = 1
-    addend = 2
-    expected = augend + addend
-    obtained = dt.add_offset(augend, addend)
-    assert expected == obtained
+@mock.patch('argparse.ArgumentParser.parse_args',return_value=argparse.Namespace(kwarg1="Isla", kwarg2="Temporada"))
+def test_command(mock_args):
+    obtained_paths = geci_cli()
+    pass
