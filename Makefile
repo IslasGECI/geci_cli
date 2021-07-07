@@ -11,8 +11,8 @@ all: check coverage mutants
 		mutants \
 		tests
 
-module = dummy_transformations
-codecov_token = 6c56bccb-1758-4ed9-8161-97c845591c26
+module = geci_cli
+codecov_token = b244fa4f-f4d1-45f0-9caa-85c0eedfc1e1
 
 define lint
 	pylint \
@@ -54,7 +54,7 @@ linter:
 	$(call lint, ${module})
 	$(call lint, tests)
 
-mutants:
+mutants: install
 	mutmut run --paths-to-mutate ${module}
 
 tests: install
