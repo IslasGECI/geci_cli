@@ -1,7 +1,6 @@
-from geci_cli import geci_cli
-from unittest import mock
-
 import argparse
+from unittest import mock
+from geci_cli import geci_cli
 
 
 @mock.patch(
